@@ -39,6 +39,8 @@
     };
   </script>
   <body class="bg-gray-100 dark:bg-gray-900">
+    <!-- Header Position -->
+    <div id="navbar-container"></div>
     <main>
       <!-- Hero / Intro Section -->
       <section
@@ -431,16 +433,23 @@
           </div>
         </section>
       </div>
-      <!-- Footer Position -->
-      <div id="footer"></div>
-
-      <!-- Import footer.js -->
-      <script src="/js/footer.js"></script>
-
-      <!-- Call function -->
-      <script>
-        renderFooter("footer");
-      </script>
     </main>
+    <!-- Footer Position -->
+    <div id="footer"></div>
+
+    <!-- Import footer.js -->
+    <script src="/js/footer.js"></script>
+
+    <!-- Call function -->
+    <script>
+      renderFooter("footer");
+    </script>
+    <!-- Import navbar.js -->
+    <script src="../js/navbar.js"></script>
+
+    <!-- Call function -->
+    <script>
+      renderNavbar("navbar-container", "about"); // Use "about" for active link
+    </script>
   </body>
 </html>
