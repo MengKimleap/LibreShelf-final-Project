@@ -49,25 +49,26 @@
       },
     };
   </script>
-  <body class="bg-gray-100 dark:bg-gray-900">
+  <script src="./js/theme.js"></script>
+  <body class="bg-background dark:bg-slate-900 font-primary">
     <!-- Header Position -->
     <div id="navbar-container"></div>
     <main>
       <!-- Hero / Intro Section -->
       <section
-        class="flex flex-col items-center justify-center w-full bg-[url('../img/image.jpg')] bg-cover h-[700px] text-gray-50 text-center gap-4 shadow-2xl"
+        class="flex flex-col items-center justify-center w-full bg-[url('../img/image.jpg')] bg-cover h-[700px] text-light-gray text-center gap-4 shadow-2xl"
       >
         <h1 class="text-5xl font-bold font-primary mb-[30px]">
           About LibreShelf
         </h1>
 
-        <p class="max-w-2xl text-[18px]">
+        <p class="max-w-2xl text-[18px] text-light-gray">
           Supporting readers and educators worldwide with excellent digital
           library resources.
         </p>
         <!-- font awsome -->
         <button
-          class="px-6 py-3 mt-4 font-semibold bg-white text-blue-900 rounded-md hover:bg-secondary border-2 hover:border-primary"
+          class="px-6 py-3 mt-4 font-semibold bg-light-gray text-primary rounded-md hover:bg-secondary border hover:border-light-gray"
         >
           <i class="fa-regular fa-address-book"></i>
           Contact Us
@@ -78,11 +79,11 @@
         <!-- Vision Section -->
         <section>
           <h2 class="flex font-bold text-4xl mb-[50px]">
-            <p class="text-blue-800 pr-[10px]">Vision</p>
-            <p class="text-blue-400 pr-[10px]">Of</p>
-            <p class="text-amber-300 pr-[10px]">Library</p>
+            <p class="text-primary pr-[10px]">Vision</p>
+            <p class="text-secondary pr-[10px]">Of</p>
+            <p class="text-accent pr-[10px]">Library</p>
           </h2>
-          <p class="w-[800px] text-[18px] dark:text-gray-50">
+          <p class=" text-[18px] dark:text-light-gray">
             We created LibreShelf to make reading easier for everyone. Many
             students and readers struggle to find organized, high-quality book
             resources. Our website offers a clean and modern platform where
@@ -93,11 +94,11 @@
         <!-- Mentor Section -->
         <section>
           <h2 class="flex text-4xl font-bold pb-[50px] pt-[50px]">
-            <p class="text-blue-800 pr-[10px]">Meet</p>
-            <p class="text-blue-400 pr-[10px]">Our</p>
-            <p class="text-amber-300 pr-[10px]">Mentor</p>
+            <p class="text-primary pr-[10px]">Meet</p>
+            <p class="text-secondary pr-[10px]">Our</p>
+            <p class="text-accent pr-[10px]">Mentor</p>
           </h2>
-          <p class="w-[800px] mb-[50px] text-[18px] dark:text-gray-50">
+          <p class=" mb-[50px] text-[18px] dark:text-light-gray">
             Our mentors offer their wisdom, strategies , and experience to help
             us improve gain meaning skill and inspired our journey.
           </p>
@@ -105,8 +106,8 @@
           <section class="w-full p-10">
             <div class="lg:flex grid justify-around items-center w-full gap-10">
               <article
-                data-aos="flip-right"
-                class="sm:flex block justify-center items-center border-2 hover:border-primary dark:hover:border-white bg-gray-200 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+                data-aos="zoom-in-right"
+                class="md:w-[450px] sm:flex block  items-center border-2 border-transparent hover:border-white bg-light-gray hover:bg-secondary dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
               >
                 <img
                   class="w-[200px] h-[250px] rounded-[10px]"
@@ -118,24 +119,24 @@
                     Eung Lyzhia
                   </h3>
                   <p
-                    class="text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary text-[16px]"
+                    class="text-primary hover:text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                   >
                     Mentor
                   </p>
                   <i
-                    class="fa-brands fa-telegram text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
+                    class="fa-brands fa-telegram text-primary hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
                   ></i>
                   <i
-                    class="fa-brands fa-facebook text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
+                    class="fa-brands fa-facebook text-primary hover:text-primary dark:text-white dark:hover:text-primary pr-2"
                   ></i>
                   <i
-                    class="fa-brands fa-github text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
+                    class="fa-brands fa-github text-primary hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
                   ></i>
                 </div>
               </article>
               <article
-                data-aos="flip-left"
-                class="sm:flex block justify-center items-center border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+                data-aos="zoom-in-left"
+                class="md:w-[450px] sm:flex block  items-center border-2 border-transparent hover:border-white bg-light-gray hover:bg-secondary  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
               >
                 <img
                   class="w-[200px] h-[250px] rounded-[10px]"
@@ -145,18 +146,18 @@
                   <h3 class="text-primary font-bold text-[24px]">Teacher</h3>
                   <h3 class="text-blue-400 font-bold text-[24px]">Kay Keo</h3>
                   <p
-                    class="text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary text-[16px]"
+                    class="text-primary hover:text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                   >
                     Mentor
                   </p>
                   <i
-                    class="fa-brands fa-telegram text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
+                    class="fa-brands fa-telegram text-primary hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
                   ></i>
                   <i
-                    class="fa-brands fa-facebook text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
+                    class="fa-brands fa-facebook text-primary hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
                   ></i>
                   <i
-                    class="fa-brands fa-github text-gray-600 hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
+                    class="fa-brands fa-github text-primary hover:text-primary dark:text-white dark:hover:text-secondary pr-2"
                   ></i>
                 </div>
               </article>
@@ -166,9 +167,9 @@
         <!-- Team Section -->
         <section class="w-full">
           <h2 class="flex text-4xl font-bold pb-[50px] pt-[50px]">
-            <p class="text-blue-800 pr-[10px]">Meet</p>
-            <p class="text-blue-400 pr-[10px]">Our</p>
-            <p class="text-amber-300">Team</p>
+            <p class="text-primary pr-[10px]">Meet</p>
+            <p class="text-secondary pr-[10px]">Our</p>
+            <p class="text-accent">Team</p>
           </h2>
 
           <div
@@ -177,7 +178,7 @@
             <!-- picture1 -->
             <div
               data-aos="fade-down-right"
-              class="lg:col-start-2 md:col-start-1 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-2 md:col-start-1  hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -197,20 +198,20 @@
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
             <!-- picute2 -->
             <div
               data-aos="fade-down-left"
-              class="lg:col-start-3 md:col-start-2 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-3 md:col-start-2 hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -228,20 +229,20 @@
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
             <!-- picture3 -->
             <div
               data-aos="zoom-in-right"
-              class="lg:col-start-1 lg:row-start-2 md:col-start-3 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-1 lg:row-start-2 md:col-start-3 hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -253,19 +254,19 @@
                   Srin Naravouch
                 </h3>
                 <p
-                  class="text-black dark:text-white dark:hover:text-secondary text-[16px]"
+                  class="text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                 >
                   Member
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
@@ -280,7 +281,7 @@
             <!-- piture 4 -->
             <div
               data-aos="zoom-in-left"
-              class="lg:col-start-4 lg:row-start-2 md:col-start-1 md:row-start-2 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-4 lg:row-start-2 md:col-start-1 md:row-start-2 hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -292,26 +293,26 @@
                   Thoun Chamrouen
                 </h3>
                 <p
-                  class="text-black dark:text-white dark:hover:text-secondary text-[16px]"
+                  class="text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                 >
                   Member
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
             <!-- picture5 -->
             <div
               data-aos="zoom-in-right"
-              class="lg:col-start-1 lg:row-start-3 md:col-start-3 md:row-start-2 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-1 lg:row-start-3 md:col-start-3 md:row-start-2 hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -323,26 +324,26 @@
                   Ti Bunhour
                 </h3>
                 <p
-                  class="text-black dark:text-white dark:hover:text-secondary text-[16px]"
+                  class="text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                 >
                   Member
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
             <!-- picture6 -->
             <div
               data-aos="zoom-in-left"
-              class="lg:col-start-4 lg:row-start-3 md:col-start-1 md:row-start-3 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-4 lg:row-start-3 md:col-start-1 md:row-start-3 hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -354,26 +355,26 @@
                   Phin Sopheacheadavid
                 </h3>
                 <p
-                  class="text-black dark:text-white dark:hover:text-secondary text-[16px]"
+                  class="text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                 >
                   Member
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
             <!-- picture7 -->
             <div
               data-aos="fade-up-right"
-              class="lg:col-start-2 lg:row-start-4 md:col-start-2 md:row-start-3 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-2 lg:row-start-4 md:col-start-2 md:row-start-3 hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -385,26 +386,26 @@
                   Sim Sovannorra
                 </h3>
                 <p
-                  class="text-black dark:text-white dark:hover:text-secondary text-[16px]"
+                  class="text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                 >
                   Member
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
             <!-- picture8 -->
             <div
               data-aos="fade-up-left"
-              class="lg:col-start-3 lg:row-start-4 md:col-start-3 md:row-start-3 border-2 hover:border-primary dark:hover:border-white bg-gray-100 hover:bg-blue-200 dark:bg-secondary rounded-[20px] p-4 shadow-2xl"
+              class="lg:col-start-3 lg:row-start-4 md:col-start-3 md:row-start-3 hover:bg-secondary border-2 border-transparent hover:border-white bg-light-gray  dark:bg-secondary  hover:shadow-2xl shadow-secondary duration-1500 rounded-[20px] p-4 hover:scale-[101%]"
             >
               <article>
                 <img
@@ -416,19 +417,19 @@
                   Chum Sokheng
                 </h3>
                 <p
-                  class="text-black dark:text-white dark:hover:text-secondary text-[16px]"
+                  class="text-primary dark:text-white dark:hover:text-secondary text-[16px]"
                 >
                   Member
                 </p>
                 <p class="text-blue-400 text-[16px]">Web developer</p>
                 <i
-                  class="fa-brands fa-telegram dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-telegram text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-facebook dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-facebook text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
                 <i
-                  class="fa-brands fa-github dark:text-white dark:hover:text-secondary pr-2"
+                  class="fa-brands fa-github text-primary dark:text-white dark:hover:text-secondary pr-2"
                 ></i>
               </article>
             </div>
