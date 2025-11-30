@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LibreShelf Dashboard</title>
+
+  <!-- Import Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body class="bg-gray-100  dark:bg-gray-800 dark:text-white text-gray-800 ">
+
+<!-- MAIN LAYOUT -->
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+ <button id="menuBtn" 
+  class="p-3 md:hidden fixed top-4 right-4 z-50 bg-white dark:bg-gray-800 shadow rounded">
+  ☰
+</button>
+
+  <!-- Sidebar -->
+<aside id="sidebar"
+  class="
+    fixed md:static          
+    inset-y-0 left-0
+    w-64 bg-white dark:bg-gray-800 shadow-xl p-6
+    transform -translate-x-full md:translate-x-0
+    transition-transform duration-300
+    z-50
+  ">
+    
+    <!-- Profile -->
+    <div class="flex items-center gap-3 pb-5 border-b border-gray-200 dark:border-gray-700">
+      <img src="../img/2.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+      <span class="font-semibold text-gray-900 dark:text-gray-100">Welcome! Sovannreach</span>
+    </div>
+
+    <!-- Menu -->
+    <ul class="mt-6 space-y-4">
+      <li>
+        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 13h8V3H3v10zm10 8h8V3h-8v18z"/>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 12l9-9 9 9M5 10v10h14V10" stroke-linecap="round"/>
+          </svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20v4H6.5A2.5 2.5 0 014 18.5v-9A2.5 2.5 0 016.5 7H20v4H6.5A2.5 2.5 0 004 13.5v6z"/>
+          </svg>
+          My Books
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+          Categories
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M6 20c0-3.333 2.667-6 6-6s6 2.667 6 6"/>
+          </svg>
+          About Us
+        </a>
+      </li>
+
+      <!-- Request Section -->
+      <li class="font-semibold text-gray-900 pt-4 dark:text-gray-100">Request</li>
+      <li>
+        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 5v14m7-7H5" stroke-linecap="round"/>
+          </svg>
+          Request Upload
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M6 20c0-3.333 2.667-6 6-6s6 2.667 6 6"/>
+          </svg>
+          My Account
+        </a>
+      </li>
+      <li id="dark-mode-toggle" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 cursor-pointer dark:text-gray-200 dark:hover:text-blue-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        Dark Mode
+      </li>
+    </ul>
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 p-6">
+
+    <!-- Recently Read -->
+    <h2 class="text-2xl font-semibold mb-4 dark:text-white text-gray-800">Recently Read</h2>
+
+    <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row gap-6">
+      <img src="../img/books/earth.jpg"
+           class="w-36 rounded-lg shadow-md">
+
+      <div class="flex-1">
+        <h3 class="text-lg font-semibold text-gray-900">
+          Psychology of Money: What we think about when we think about money.
+        </h3>
+
+        <p class="text-sm text-gray-600 mt-2">Jason Zweig · September 2020 · 256 pages</p>
+
+        <!-- Progress bar -->
+        <div class="mt-4">
+          <p class="text-sm text-gray-600">Your Progress</p>
+          <div class="bg-gray-200 h-2 rounded-full mt-1">
+            <div class="bg-blue-600 h-2 rounded-full" style="width: 55%;"></div>
+          </div>
+        </div>
+
+        <button class="mt-4 px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+          Continue Reading
+        </button>
+      </div>
+    </div>
+
+    <!-- Book Collection -->
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Your Book Collections</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card -->
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+          <img src="../img/books/beyong-the-ocean.jpg"
+               class="w-full h-48 object-cover rounded-lg shadow-sm">
+          <h3 class="mt-3 font-semibold text-gray-800 text-sm">The Mountain Is You</h3>
+          <p class="text-xs text-gray-500">Brianna Wiest · 421 pages</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+          <img src="../img/books/hawking.jpg"
+               class="w-full h-48 object-cover rounded-lg shadow-sm">
+          <h3 class="mt-3 font-semibold text-gray-800 text-sm">Atomic Habits</h3>
+          <p class="text-xs text-gray-500">James Clear · 320 pages</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+          <img src="../img/books/mona-eye.jpg"
+               class="w-full h-48 object-cover rounded-lg shadow-sm">
+          <h3 class="mt-3 font-semibold text-gray-800 text-sm">Ikigai</h3>
+          <p class="text-xs text-gray-500">Héctor García · 208 pages</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+          <img src="../img/books/the-gril-who-fall.jpg"
+               class="w-full h-48 object-cover rounded-lg shadow-sm">
+          <h3 class="mt-3 font-semibold text-gray-800 text-sm">The Art of War</h3>
+          <p class="text-xs text-gray-500">Sun Tzu · 250 pages</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Right Sidebar -->
+  <aside class="w-72 p-6 hidden lg:block">
+
+    <!-- Trending Books -->
+    <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Trending Books This Week</h2>
+
+    <div class="space-y-4">
+      <div>
+        <img src="../img/banner/atomic-habit.jpg"
+             class="w-full h-40 object-cover rounded-xl shadow">
+        <p class="font-medium text-gray-700 mt-2 dark:text-white">Eat That Frog!</p>
+      </div>
+
+      <div>
+        <img src="../img/books/not-another.webp"
+             class="w-full h-40 object-cover rounded-xl shadow">
+        <p class="font-medium text-gray-700 mt-2 dark:text-white">Who Moved My Cheese?</p>
+      </div>
+    </div>
+
+    <!-- Authors -->
+    <h2 class="text-3xl font-semibold mt-10 mb-4 text-gray-800 dark:text-white">Top Authors</h2>
+
+    <ul class="space-y-2 text-gray-700 text-sm">
+        <div class="flex gap-5 ">
+
+            <li class="text-2xl dark:text-white">Robert Kiyosaki </li>
+            <img src="../img/cherKeo.jpg" alt="" class="w-[30px] rounded-[50%]">
+        </div>
+        <div class="flex gap-5 ">
+
+            <li class="text-2xl dark:text-white">Robert Kiyosaki </li>
+            <img src="../img/cherKeo.jpg" alt="" class="w-[30px] rounded-[50%]">
+        </div>
+        <div class="flex gap-5 ">
+
+            <li class="text-2xl dark:text-white">Robert Kiyosaki </li>
+            <img src="../img/cherKeo.jpg" alt="" class="w-[30px] rounded-[50%]">
+        </div>
+        <div class="flex gap-5 ">
+
+            <li class="text-2xl dark:text-white">Robert Kiyosaki </li>
+            <img src="../img/cherKeo.jpg" alt="" class="w-[30px] rounded-[50%]">
+        </div>
+      
+    </ul>
+
+  </aside>
+
+</div>
+    <script src="../js/dashboarduser.js"></script>
+</body>
+<script>
+  const sidebar = document.getElementById("sidebar");
+  const menuBtn = document.getElementById("menuBtn");
+
+  menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("-translate-x-full");
+  });
+</script>
+
+</html>
