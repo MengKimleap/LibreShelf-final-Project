@@ -32,11 +32,11 @@
     <div id="navbar-container"></div>
 
     <!-- ================= MAIN CONTENT ================= -->
-    <div class="max-w-7xl mx-auto pt-32 px-6 flex gap-10">
+    <div class="mb-10 max-w-7xl mx-20 pt-32 px-6 flex gap-10">
       <!-- SIDEBAR (Desktop Only) -->
-      <aside class="w-64 bg-white rounded-lg shadow p-5 h-fit hidden md:block">
-        <h2 class="font-bold text-lg mb-3">Filter by genres</h2>
-        <div class="space-y-2 mb-5">
+      <aside class="dark:bg-primary mt-20 w-64 bg-white rounded-lg shadow p-5 h-fit hidden md:block">
+        <h2 class="font-bold text-lg mb-3 dark:text-pure-white">Filter by genres</h2>
+        <div class="space-y-2 mb-5  dark:text-pure-white">
           <label
             ><input type="radio" name="genre" value="Horror" /> Horror /
             Thriller</label
@@ -48,8 +48,8 @@
           <label><input type="radio" name="genre" value="Novel" /> Novel</label>
         </div>
 
-        <h2 class="font-bold text-lg mb-3">Filter by publisher</h2>
-        <div class="space-y-2 mb-5">
+        <h2 class="font-bold text-lg mb-3  dark:text-pure-white">Filter by publisher</h2>
+        <div class="space-y-2 mb-5  dark:text-pure-white">
           <label
             ><input type="radio" name="publisher" value="Amazon" /> Amazon
             Publications</label
@@ -64,8 +64,8 @@
           >
         </div>
 
-        <h2 class="font-bold text-lg mb-3">Filter by author name</h2>
-        <div class="space-y-2">
+        <h2 class="font-bold text-lg mb-3  dark:text-pure-white">Filter by author name</h2>
+        <div class="space-y-2  dark:text-pure-white">
           <label
             ><input type="radio" name="author" value="Cam R. Teal" /> Cam R.
             Teal</label
@@ -90,8 +90,9 @@
 
       <!-- RIGHT CONTENT -->
       <div class="flex-1">
+        
         <!-- Search + Mobile Filter Btn -->
-        <div class="flex justify-between items-center mb-6 md:justify-end">
+        <div class=" flex justify-between items-center mb-6 md:justify-end">
           <button
             id="mobileFilterBtn"
             class="md:hidden px-4 py-2 bg-[#112D4E] text-white rounded-lg shadow hover:bg-[#3F72AF]"
@@ -103,7 +104,7 @@
             id="searchInput"
             type="text"
             placeholder="Search Something..."
-            class="w-56 md:w-72 border rounded-full px-4 py-2 shadow-sm ml-3"
+            class="dark:border-pure-white dark:text-pure-white w-56 md:w-72 border rounded-full px-4 py-2 shadow-sm ml-3"
             onkeyup="filterBooks()"
           />
         </div>
@@ -116,7 +117,7 @@
           <h2 class="font-bold text-lg mb-3 text-[#112D4E]">
             Filter by genres
           </h2>
-          <div class="space-y-2 mb-5">
+          <div class="space-y-2 mb-5 ">
             <label
               ><input type="radio" name="m_genre" value="Horror" /> Horror /
               Thriller</label
@@ -133,7 +134,7 @@
           <h2 class="font-bold text-lg mb-3 text-[#112D4E]">
             Filter by publisher
           </h2>
-          <div class="space-y-2 mb-5">
+          <div class="space-y-2 mb-5 ">
             <label
               ><input type="radio" name="m_publisher" value="Amazon" /> Amazon
               Publications</label
@@ -181,7 +182,7 @@
         >
           <!-- Example Card -->
           <div
-            class="book-card bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1680592101i/78133908.jpg"
@@ -243,7 +244,7 @@
             </div>
           </div>
           <div
-            class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1333578164i/13414814.jpg"
@@ -251,7 +252,7 @@
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
-            <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+            <h3 class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -303,7 +304,7 @@
             </div>
           </div>
           <div
-            class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1371428466i/17978489.jpg"
@@ -311,7 +312,7 @@
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
-            <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+            <h3 class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -363,7 +364,7 @@
             </div>
           </div>
           <div
-            class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1729943409i/220353644.jpg"
@@ -371,7 +372,7 @@
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
-            <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+            <h3 class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -423,7 +424,7 @@
             </div>
           </div>
           <div
-            class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1441586898i/24885734.jpg"
@@ -431,7 +432,7 @@
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
-            <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+            <h3 class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -483,7 +484,7 @@
             </div>
           </div>
           <div
-            class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://placehold.co/150x220/264653/ffffff?text=Book+Cover"
@@ -491,7 +492,7 @@
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
-            <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+            <h3 class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -543,7 +544,7 @@
             </div>
           </div>
           <div
-            class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1654215925i/61215351.jpg"
@@ -551,7 +552,7 @@
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
-            <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+            <h3 class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -603,7 +604,7 @@
             </div>
           </div>
           <div
-            class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
+            class="book-card bg-white mt-4 dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg"
@@ -611,7 +612,7 @@
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
-            <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+            <h3 class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
