@@ -3,9 +3,7 @@
     "@tailwindcss/cli": "^4.1.17",
     "tailwindcss": "^4.1.17"
   },
-    "scripts":{
-    "start": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  "scripts": {
+    "start": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   }
 }
-  
-

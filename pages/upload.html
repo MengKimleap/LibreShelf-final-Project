@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Book - LibreShelf</title>
+
+    <link href="../src/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script type="module" src="../js/api.js"></script>
+    <script src="../js/theme.js"></script>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-slate-900 font-sans text-text-black dark:text-gray-100 transition-colors duration-300"
+  >
+    <div id="navbar-container"></div>
+
+    <main
+      class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 min-h-screen"
+    >
+      <div class="max-w-3xl mx-auto">
+        <!-- Header -->
+        <div class="mb-8">
+          <h1 class="text-3xl font-extrabold text-primary dark:text-white">
+            Upload a New Book
+          </h1>
+          <p class="text-gray-500 dark:text-gray-400 mt-2">
+            Share your knowledge with the community.
+          </p>
+        </div>
+
+        <!-- Upload Form -->
+        <div
+          class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-gray-200 dark:border-slate-700 p-8"
+        >
+          <form id="upload-form" class="space-y-8">
+            <!-- 1. Basic Info -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label
+                  class="font-bold text-sm text-gray-700 dark:text-gray-300"
+                  >Book Title <span class="text-red-500">*</span></label
+                >
+                <input
+                  type="text"
+                  id="title"
+                  required
+                  placeholder="e.g. The Great Gatsby"
+                  class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-background dark:bg-slate-900 focus:ring-2 focus:ring-accent outline-none transition"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="font-bold text-sm text-gray-700 dark:text-gray-300"
+                  >Category <span class="text-red-500">*</span></label
+                >
+                <select
+                  id="category"
+                  required
+                  class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-background dark:bg-slate-900 focus:ring-2 focus:ring-accent outline-none transition"
+                >
+                  <option value="" disabled selected>Select a genre</option>
+                  <!-- Populated by JS -->
+                </select>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="font-bold text-sm text-gray-700 dark:text-gray-300"
+                >Description <span class="text-red-500">*</span></label
+              >
+              <textarea
+                id="description"
+                required
+                rows="4"
+                placeholder="What is this book about?"
+                class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-background dark:bg-slate-900 focus:ring-2 focus:ring-accent outline-none resize-none transition"
+              ></textarea>
+            </div>
+
+            <hr class="border-gray-100 dark:border-slate-700" />
+
+            <!-- 2. File Uploads -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Thumbnail Upload -->
+              <div class="space-y-2">
+                <label
+                  class="font-bold text-sm text-gray-700 dark:text-gray-300"
+                  >Cover Image <span class="text-red-500">*</span></label
+                >
+                <div
+                  class="relative w-full h-64 border-2 border-dashed border-gray-300 dark:border-slate-600 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors flex flex-col items-center justify-center cursor-pointer group overflow-hidden bg-gray-50 dark:bg-slate-900"
+                >
+                  <input
+                    type="file"
+                    id="cover-file"
+                    accept="image/*"
+                    required
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                  />
+
+                  <!-- Preview Image (Hidden initially) -->
+                  <img
+                    id="cover-preview"
+                    class="absolute inset-0 w-full h-full object-cover hidden z-0"
+                  />
+
+                  <!-- Placeholder -->
+                  <div id="cover-placeholder" class="text-center p-4">
+                    <div
+                      class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"
+                    >
+                      <i class="ph-bold ph-image text-2xl"></i>
+                    </div>
+                    <p
+                      class="text-sm font-medium text-gray-600 dark:text-gray-300"
+                    >
+                      Click to upload cover
+                    </p>
+                    <p class="text-xs text-gray-400 mt-1">PNG, JPG (Max 2MB)</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PDF Upload -->
+              <div class="space-y-2">
+                <label
+                  class="font-bold text-sm text-gray-700 dark:text-gray-300"
+                  >Book File (PDF) <span class="text-red-500">*</span></label
+                >
+                <div
+                  class="relative w-full h-64 border-2 border-dashed border-gray-300 dark:border-slate-600 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors flex flex-col items-center justify-center cursor-pointer group bg-gray-50 dark:bg-slate-900"
+                >
+                  <input
+                    type="file"
+                    id="book-file"
+                    accept=".pdf"
+                    required
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                  />
+
+                  <div id="file-placeholder" class="text-center p-4">
+                    <div
+                      class="w-12 h-12 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"
+                    >
+                      <i class="ph-bold ph-file-pdf text-2xl"></i>
+                    </div>
+                    <p
+                      id="file-name-display"
+                      class="text-sm font-medium text-gray-600 dark:text-gray-300 line-clamp-1 break-all px-2"
+                    >
+                      Click to upload PDF
+                    </p>
+                    <p class="text-xs text-gray-400 mt-1">PDF only</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Error Message -->
+            <div
+              id="error-message"
+              class="hidden p-4 bg-red-50 text-red-600 text-sm rounded-lg border border-red-100 flex items-center gap-2"
+            >
+              <i class="ph-bold ph-warning-circle"></i>
+              <span>Error message here</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-end pt-4">
+              <button
+                type="submit"
+                id="submit-btn"
+                class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                <i class="ph-bold ph-paper-plane-right"></i> Publish Book
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+    <!-- Logic Script -->
+    <script type="module" src="../js/upload.js"></script>
+
+    <script>
+      renderNavbar("navbar-container", "");
+      renderFooter("footer-container");
+    </script>
+  </body>
+</html>

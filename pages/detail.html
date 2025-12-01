@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details - LibreShelf</title>
+
+    <link href="../src/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script type="module" src="../js/api.js"></script>
+    <script src="../js/theme.js"></script>
+  </head>
+  <body
+    class="bg-background dark:bg-slate-900 font-sans text-text-black dark:text-gray-100 antialiased transition-colors duration-300"
+  >
+    <div id="navbar-container"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="min-h-screen pb-16">
+      <!-- LOADING STATE (Full Screen) -->
+      <div
+        id="loading-state"
+        class="fixed inset-0 bg-white dark:bg-slate-900 z-40 flex flex-col items-center justify-center"
+      >
+        <i class="ph-bold ph-spinner animate-spin text-5xl text-accent"></i>
+        <p class="mt-4 text-gray-500 font-medium">Fetching book details...</p>
+      </div>
+
+      <!-- ========================== -->
+      <!-- TOP SECTION (Dark Blue)    -->
+      <!-- ========================== -->
+      <section class="bg-primary pt-28 pb-16 relative shadow-lg">
+        <!-- Back Button (Absolute) -->
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+          <button
+            onclick="history.back()"
+            class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition backdrop-blur-sm"
+          >
+            <i class="ph-bold ph-arrow-left text-xl"></i>
+          </button>
+        </div>
+
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row gap-10 items-center md:items-start"
+          >
+            <!-- Left: Book Cover -->
+            <div
+              class="flex-shrink-0 w-[200px] md:w-[260px] aspect-[2/3] rounded-lg overflow-hidden shadow-2xl border-4 border-white/10"
+            >
+              <img
+                id="book-cover"
+                src=""
+                alt="Book Cover"
+                class="w-full h-full object-cover bg-gray-700"
+              />
+            </div>
+
+            <!-- Right: Info -->
+            <div class="flex-1 text-center md:text-left text-white">
+              <!-- Author -->
+              <p
+                id="book-author"
+                class="text-gray-300 text-lg font-medium mb-2"
+              >
+                Unknown Author
+              </p>
+
+              <!-- Title -->
+              <h1
+                id="book-title"
+                class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight"
+              >
+                Loading Title...
+              </h1>
+
+              <!-- Stats Row -->
+              <div
+                class="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-6"
+              >
+                <!-- Rating -->
+                <div
+                  class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm"
+                >
+                  <i class="ph-fill ph-star text-accent"></i>
+                  <span class="font-bold">4.5</span>
+                  <span class="text-xs text-gray-300">(200 ratings)</span>
+                </div>
+                <!-- Read Time (Mock) -->
+                <div
+                  class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm"
+                >
+                  <i class="ph-bold ph-clock"></i>
+                  <span class="text-sm">15 mins read</span>
+                </div>
+
+                <!-- NEW: Page Count Badge -->
+                <div
+                  class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm"
+                >
+                  <i class="ph-bold ph-files"></i>
+                  <span id="page-count" class="text-sm">240 Pages</span>
+                </div>
+              </div>
+
+              <!-- Categories (Pills) -->
+              <div class="mb-8">
+                <h3
+                  class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3"
+                >
+                  Genres
+                </h3>
+                <div
+                  id="book-categories"
+                  class="flex flex-wrap justify-center md:justify-start gap-2"
+                >
+                  <!-- Pills injected here -->
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <!-- Download PDF -->
+                <a
+                  id="download-btn"
+                  href="#"
+                  target="_blank"
+                  class="px-6 py-3 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition shadow-lg flex items-center gap-2"
+                >
+                  <i class="ph-bold ph-download-simple"></i> Download PDF
+                </a>
+                <!-- Favorite -->
+                <button
+                  id="favorite-btn"
+                  class="px-4 py-3 border border-white/30 text-white rounded-lg hover:bg-white/10 transition flex items-center gap-2"
+                >
+                  <i class="ph-bold ph-heart text-xl"></i>
+                  <span>Favorite</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== -->
+      <!-- BOTTOM SECTION (Content)   -->
+      <!-- ========================== -->
+      <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <!-- Left Col: Table of Contents (Sticky) -->
+          <aside class="hidden lg:block lg:col-span-1">
+            <div
+              class="sticky top-28 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm"
+            >
+              <h3 class="font-bold text-primary dark:text-white mb-4 text-lg">
+                About This Book
+              </h3>
+              <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-info text-accent mt-0.5"></i>
+                  <span>Full description available.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-file-pdf text-accent mt-0.5"></i>
+                  <span>PDF Format Supported.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="ph-bold ph-check-circle text-accent mt-0.5"></i>
+                  <span>Open Source License.</span>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Right Col: Description & Reader -->
+          <div class="lg:col-span-2 space-y-8">
+            <!-- Description Text -->
+            <div>
+              <h2 class="text-2xl font-bold text-primary dark:text-white mb-4">
+                Synopsis
+              </h2>
+              <p
+                id="book-description"
+                class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg"
+              >
+                Loading description...
+              </p>
+            </div>
+
+            <!-- PDF Viewer Container -->
+            <div
+              id="pdf-container"
+              class="bg-gray-100 dark:bg-slate-800 rounded-2xl p-4 border border-gray-200 dark:border-slate-700 h-[600px] flex flex-col group"
+            >
+              <div class="flex justify-between items-center mb-4 px-2">
+                <h3
+                  class="font-bold text-gray-700 dark:text-gray-200 flex items-center gap-2"
+                >
+                  <i class="ph-fill ph-book-open-text"></i> Preview
+                </h3>
+
+                <!-- NEW: Fullscreen Toggle Button -->
+                <button
+                  id="fullscreen-btn"
+                  class="p-2 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-colors text-gray-600 dark:text-gray-300"
+                  title="Toggle Fullscreen"
+                >
+                  <i class="ph-bold ph-corners-out text-xl"></i>
+                </button>
+              </div>
+
+              <!-- IFRAME for PDF -->
+              <iframe
+                id="pdf-viewer"
+                src=""
+                class="w-full flex-1 rounded-lg bg-white shadow-inner"
+                frameborder="0"
+              ></iframe>
+
+              <!-- Fallback Message -->
+              <div
+                id="pdf-fallback"
+                class="hidden flex-1 flex flex-col items-center justify-center text-center"
+              >
+                <i class="ph-duotone ph-file-x text-4xl text-gray-400 mb-2"></i>
+                <p class="text-gray-500">Preview not available.</p>
+                <a
+                  id="fallback-download"
+                  href="#"
+                  class="text-accent hover:underline mt-2"
+                  >Download file to read</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/navbar.js"></script>
+    <!-- Logic Script -->
+    <script type="module" src="../js/detail.js"></script>
+
+    <script>
+      renderNavbar("navbar-container", "");
+    </script>
+  </body>
+</html>
