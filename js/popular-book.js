@@ -41,7 +41,7 @@ function initPopularBooks(containerId) {
  */
 function createPopularBookCard(book) {
   return `
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full group overflow-hidden">
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:shadow-md transition-all duration-300 flex flex-col h-full group overflow-hidden">
             
             <!-- Card Header: Image & Badge -->
             <div class="relative aspect-[3/4] w-full bg-gray-100 overflow-hidden">
@@ -58,14 +58,14 @@ function createPopularBookCard(book) {
             </div>
 
             <!-- Card Body -->
-            <div class="p-4 flex flex-col flex-grow dark:bg-slate-900">
+            <div class="p-4 flex flex-col flex-grow dark:bg-slate-800">
                 
                 <!-- Title & Author -->
                 <div class="mb-3">
                     <h3 class="text-lg font-bold text-primary line-clamp-1 dark:text-pure-white" title="${book.title}">
                         ${book.title}
                     </h3>
-                    <p class="text-sm text-dark-gray line-clamp-1">${book.author}</p>
+                    <p class="text-sm text-dark-gray dark:text-gray-300 line-clamp-1">${book.author}</p>
                 </div>
 
                 <!-- Action Buttons Row -->
@@ -75,19 +75,19 @@ function createPopularBookCard(book) {
                     <div class="flex items-center gap-3">
                         <!-- Favorite Button -->
                         <!-- TODO: API - Add onclick handler to save to favorites -->
-                        <button class="text-dark-gray hover:text-red-500 transition-colors" title="Add to Favorites">
+                        <button class="text-dark-gray dark:text-gray-300 hover:text-red-500 transition-colors" title="Add to Favorites">
                             <i class="ph-bold ph-heart text-xl"></i>
                         </button>
                         
                         <!-- Download PDF Button -->
                         <!-- TODO: API - Link this to the actual PDF URL -->
-                        <button class="text-dark-gray hover:text-primary transition-colors" title="Download PDF">
+                        <button class="text-dark-gray dark:text-gray-300 hover:text-primary transition-colors" title="Download PDF">
                             <i class="ph-bold ph-download-simple text-xl"></i>
                         </button>
                     </div>
 
                     <!-- Right: Read Button -->
-                    <a href="./html/details.html?id=${book.id}" class="text-xs font-bold text-secondary hover:text-primary uppercase tracking-wider transition-colors">
+                    <a href="./html/details.html?id=${book.id}" class="text-xs font-bold text-secondary hover:text-primary dark:hover:text-blue-400 uppercase tracking-wider transition-colors">
                         Read Now
                     </a>
                 </div>
