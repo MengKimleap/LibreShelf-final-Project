@@ -223,7 +223,7 @@ export const Books = {
 
   // TEACHER/ADMIN ONLY: Create book
   async create(bookData) {
-    return protectedRequest("/books", "POST", bookData);
+    return protectedRequest("/books/", "POST", bookData);
   },
   // TEACHER/ADMIN ONLY: Update book
   async update(bookId, bookData) {
