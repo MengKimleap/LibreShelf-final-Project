@@ -32,11 +32,24 @@
     <div id="navbar-container"></div>
 
     <!-- ================= MAIN CONTENT ================= -->
+<<<<<<< HEAD
     <div class="max-w-7xl mx-auto pt-32 px-6 flex gap-10">
       <!-- SIDEBAR (Desktop Only) -->
       <aside class="w-64 bg-white rounded-lg shadow p-5 h-fit hidden md:block">
         <h2 class="font-bold text-lg mb-3">Filter by genres</h2>
         <div class="space-y-2 mb-5">
+=======
+    <!-- Center the whole content container with mx-auto and sensible horizontal padding -->
+    <div class="mb-10 max-w-7xl mx-auto pt-32 px-6 flex gap-10">
+      <!-- SIDEBAR (Desktop Only) -->
+      <aside
+        class="dark:bg-primary mt-20 w-64 bg-white rounded-lg shadow p-5 h-fit hidden md:block"
+      >
+        <h2 class="font-bold text-lg mb-3 dark:text-pure-white">
+          Filter by genres
+        </h2>
+        <div class="space-y-2 mb-5 dark:text-pure-white">
+
           <label
             ><input type="radio" name="genre" value="Horror" /> Horror /
             Thriller</label
@@ -48,8 +61,15 @@
           <label><input type="radio" name="genre" value="Novel" /> Novel</label>
         </div>
 
+<<<<<<< HEAD
         <h2 class="font-bold text-lg mb-3">Filter by publisher</h2>
         <div class="space-y-2 mb-5">
+=======
+        <h2 class="font-bold text-lg mb-3 dark:text-pure-white">
+          Filter by publisher
+        </h2>
+        <div class="space-y-2 mb-5 dark:text-pure-white">
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
           <label
             ><input type="radio" name="publisher" value="Amazon" /> Amazon
             Publications</label
@@ -64,8 +84,15 @@
           >
         </div>
 
+<<<<<<< HEAD
         <h2 class="font-bold text-lg mb-3">Filter by author name</h2>
         <div class="space-y-2">
+=======
+        <h2 class="font-bold text-lg mb-3 dark:text-pure-white">
+          Filter by author name
+        </h2>
+        <div class="space-y-2 dark:text-pure-white">
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
           <label
             ><input type="radio" name="author" value="Cam R. Teal" /> Cam R.
             Teal</label
@@ -103,11 +130,14 @@
             id="searchInput"
             type="text"
             placeholder="Search Something..."
+<<<<<<< HEAD
             class="w-56 md:w-72 border rounded-full px-4 py-2 shadow-sm ml-3"
+=======
+            class="dark:border-pure-white dark:text-pure-white w-56 md:w-72 border rounded-full px-4 py-2 shadow-sm ml-3"
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
             onkeyup="filterBooks()"
           />
         </div>
-
         <!-- MOBILE FILTER PANEL -->
         <div
           id="mobileFilterPanel"
@@ -174,6 +204,7 @@
           </button>
         </div>
 
+<<<<<<< HEAD
         <!-- BOOK GRID 8 cards -->
         <div
           id="bookGrid"
@@ -186,11 +217,36 @@
             <img
               src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1680592101i/78133908.jpg"
               onerror="this.src=//https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1680592101i/78133908.jpg'"
+=======
+        <!-- BOOK GRID 8 cards
+             Key changes:
+             - Responsive columns: 1 (default) | 2 (sm) | 4 (lg)
+             - Use justify-items-center to center cards in each grid cell
+             - Each card has a fixed max width to keep consistent size
+        -->
+        <div
+          id="bookGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center"
+        >
+          <!-- Example Card (repeat as needed) -->
+          <div
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center w-full max-w-xs"
+            data-genre="Novel"
+            data-publisher="Amazon"
+            data-author="Cam R. Teal"
+          >
+            <img
+              src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1680592101i/78133908.jpg"
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
               alt="The Last Gathering Cover"
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
             <h3
+<<<<<<< HEAD
               class="font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2"
+=======
+              class="book-title font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2"
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
             >
               The Last Gathering
             </h3>
@@ -242,6 +298,7 @@
               </button>
             </div>
           </div>
+<<<<<<< HEAD
           <div
             class="book-card bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center"
           >
@@ -252,6 +309,22 @@
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
             <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+=======
+
+          <!-- Duplicate cards (kept same structure) -->
+          <div
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center w-full max-w-xs"
+            data-genre="History"
+            data-publisher="Kindle"
+            data-author="Chris Money"
+          >
+            <img
+              src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1333578164i/13414814.jpg"
+              alt="Book cover"
+              class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
+            />
+            <h3 class="book-title font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -260,6 +333,7 @@
             <div
               class="flex justify-between w-full mt-auto pt-2 border-t border-gray-100"
             >
+<<<<<<< HEAD
               <button
                 class="text-gray-400 hover:text-red-500 transition duration-150"
               >
@@ -312,6 +386,29 @@
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
             <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+=======
+              <button class="text-gray-400 hover:text-red-500 transition duration-150">
+                <!-- heart svg -->
+              </button>
+              <button class="text-gray-400 hover:text-blue-500 transition duration-150">
+                <!-- download svg -->
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center w-full max-w-xs"
+            data-genre="Horror"
+            data-publisher="Arena"
+            data-author="John Nexus"
+          >
+            <img
+              src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1371428466i/17978489.jpg"
+              alt="Book cover"
+              class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
+            />
+            <h3 class="book-title font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -320,6 +417,7 @@
             <div
               class="flex justify-between w-full mt-auto pt-2 border-t border-gray-100"
             >
+<<<<<<< HEAD
               <button
                 class="text-gray-400 hover:text-red-500 transition duration-150"
               >
@@ -372,6 +470,29 @@
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
             <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+=======
+              <button class="text-gray-400 hover:text-red-500 transition duration-150">
+                <!-- heart svg -->
+              </button>
+              <button class="text-gray-400 hover:text-blue-500 transition duration-150">
+                <!-- download svg -->
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center w-full max-w-xs"
+            data-genre="Novel"
+            data-publisher="Amazon"
+            data-author="Cam R. Teal"
+          >
+            <img
+              src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1729943409i/220353644.jpg"
+              alt="Book cover"
+              class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
+            />
+            <h3 class="book-title font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -380,6 +501,7 @@
             <div
               class="flex justify-between w-full mt-auto pt-2 border-t border-gray-100"
             >
+<<<<<<< HEAD
               <button
                 class="text-gray-400 hover:text-red-500 transition duration-150"
               >
@@ -432,6 +554,30 @@
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
             <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+=======
+              <button class="text-gray-400 hover:text-red-500 transition duration-150">
+                <!-- heart svg -->
+              </button>
+              <button class="text-gray-400 hover:text-blue-500 transition duration-150">
+                <!-- download svg -->
+              </button>
+            </div>
+          </div>
+
+          <!-- additional cards (you already had many) -->
+          <div
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center w-full max-w-xs"
+            data-genre="History"
+            data-publisher="Kindle"
+            data-author="Chris Money"
+          >
+            <img
+              src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1441586898i/24885734.jpg"
+              alt="Book cover"
+              class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
+            />
+            <h3 class="book-title font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -440,6 +586,7 @@
             <div
               class="flex justify-between w-full mt-auto pt-2 border-t border-gray-100"
             >
+<<<<<<< HEAD
               <button
                 class="text-gray-400 hover:text-red-500 transition duration-150"
               >
@@ -492,6 +639,29 @@
               class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
             />
             <h3 class="font-bold text-base text-gray-900 line-clamp-2">
+=======
+              <button class="text-gray-400 hover:text-red-500 transition duration-150">
+                <!-- heart svg -->
+              </button>
+              <button class="text-gray-400 hover:text-blue-500 transition duration-150">
+                <!-- download svg -->
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="book-card mt-4 bg-white dark:bg-primary rounded-lg shadow-md hover:shadow-xl transition duration-300 overflow-hidden p-3 flex flex-col items-center text-center w-full max-w-xs"
+            data-genre="Novel"
+            data-publisher="Arena"
+            data-author="John Nexus"
+          >
+            <img
+              src="https://placehold.co/150x220/264653/ffffff?text=Book+Cover"
+              alt="Book cover"
+              class="w-full h-auto object-cover rounded-md mb-3 aspect-[2/3]"
+            />
+            <h3 class="book-title font-bold text-base text-gray-900 dark:text-pure-white line-clamp-2">
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
               The Last Gathering
             </h3>
             <p class="text-xs text-gray-500 mt-1 mb-2 line-clamp-3">
@@ -500,6 +670,7 @@
             <div
               class="flex justify-between w-full mt-auto pt-2 border-t border-gray-100"
             >
+<<<<<<< HEAD
               <button
                 class="text-gray-400 hover:text-red-500 transition duration-150"
               >
@@ -659,6 +830,13 @@
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" x2="12" y1="15" y2="3" />
                 </svg>
+=======
+              <button class="text-gray-400 hover:text-red-500 transition duration-150">
+                <!-- heart svg -->
+              </button>
+              <button class="text-gray-400 hover:text-blue-500 transition duration-150">
+                <!-- download svg -->
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
               </button>
             </div>
           </div>
@@ -682,19 +860,33 @@
     </script>
 
     <script>
+<<<<<<< HEAD
       document.getElementById("hamburgerBtn").onclick = () => {
         document.getElementById("mobileMenu").classList.toggle("hidden");
       };
+=======
+      // small safety: ensure hamburger exists before binding
+      if (document.getElementById("hamburgerBtn")) {
+        document.getElementById("hamburgerBtn").onclick = () => {
+          document.getElementById("mobileMenu").classList.toggle("hidden");
+        };
+      }
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
 
       document.getElementById("mobileFilterBtn").onclick = () => {
         document.getElementById("mobileFilterPanel").classList.toggle("hidden");
       };
 
+<<<<<<< HEAD
       // Filter books
+=======
+      // Filter books (supports desktop and mobile filter radios)
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
       function filterBooks() {
         let searchValue = document
           .getElementById("searchInput")
           .value.toLowerCase();
+<<<<<<< HEAD
         let genre = document.querySelector(
           "input[name='genre']:checked"
         )?.value;
@@ -711,6 +903,31 @@
           let title = book
             .querySelector(".book-title")
             .textContent.toLowerCase();
+=======
+
+        // support both desktop and mobile radio groups
+        let genre =
+          document.querySelector("input[name='genre']:checked")?.value ||
+          document.querySelector("input[name='m_genre']:checked")?.value ||
+          null;
+
+        let publisher =
+          document.querySelector("input[name='publisher']:checked")?.value ||
+          document.querySelector("input[name='m_publisher']:checked")?.value ||
+          null;
+
+        let author =
+          document.querySelector("input[name='author']:checked")?.value ||
+          document.querySelector("input[name='m_author']:checked")?.value ||
+          null;
+
+        let books = document.querySelectorAll(".book-card");
+
+        books.forEach((book) => {
+          let titleEl =
+            book.querySelector(".book-title") || book.querySelector("h3");
+          let title = titleEl ? titleEl.textContent.toLowerCase() : "";
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
           let matchSearch = title.includes(searchValue);
           let matchGenre = !genre || book.dataset.genre === genre;
           let matchPublisher =
@@ -718,7 +935,11 @@
           let matchAuthor = !author || book.dataset.author === author;
 
           if (matchSearch && matchGenre && matchPublisher && matchAuthor) {
+<<<<<<< HEAD
             book.style.display = "block";
+=======
+            book.style.display = "";
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
           } else {
             book.style.display = "none";
           }
@@ -734,10 +955,21 @@
         filterBooks();
       }
 
+<<<<<<< HEAD
       // Add event listeners for filters
       document.querySelectorAll("input[type='radio']").forEach((radio) => {
         radio.addEventListener("change", filterBooks);
       });
+=======
+      // Add event listeners for filters (works on mobile and desktop)
+      document.querySelectorAll("input[type='radio']").forEach((radio) => {
+        radio.addEventListener("change", filterBooks);
+        radio.addEventListener("click", filterBooks);
+      });
+
+      // run once on load to apply initial filter state
+      filterBooks();
+>>>>>>> 3ce741a5ee72bc5760a048e713a5bbeb01ba3e67
     </script>
   </body>
 </html>
