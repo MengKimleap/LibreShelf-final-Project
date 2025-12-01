@@ -44,7 +44,9 @@ function createPopularBookCard(book) {
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full group overflow-hidden">
             
             <!-- Card Header: Image & Badge -->
-            <div class="relative aspect-[3/4] w-full bg-gray-100 overflow-hidden">
+            <div 
+            data-aos="zoom-in"
+            class="relative aspect-[3/4] w-full bg-gray-100 overflow-hidden">
                 <img src="${book.image_url}" 
                      alt="${book.title}" 
                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
