@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - LibreShelf</title>
+
+    <!-- CSS & Icon -->
+    <link href="../src/output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Scripts -->
+    <script type="module" src="../js/api.js"></script>
+    <script src="../js/theme.js"></script>
+  </head>
+  <body
+    class="font-primary antialiased text-text-black dark:text-gray-100 bg-gray-50 dark:bg-slate-900 transition-colors duration-300"
+  >
+    <div class="min-h-screen flex items-center justify-center p-4 py-12">
+      <!-- Main Card Container -->
+      <div
+        class="lg:fixed lg:bottom-6 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden flex w-full max-w-4xl min-h-[650px]"
+      >
+        <!-- LEFT SIDE: Illustration (Hidden on Mobile) -->
+        <div
+          class="hidden md:flex w-1/2 bg-primary relative flex-col items-center justify-center p-12 text-center"
+        >
+          <!-- Background Pattern -->
+          <div
+            class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+          ></div>
+
+          <div class="relative z-10">
+            <img
+              src="../img/Libreshelf-dark-mode.png"
+              alt="LibreShelf Logo"
+              class="w-48 mx-auto mb-6 drop-shadow-lg"
+            />
+            <h2 class="text-3xl font-bold text-white mb-4">
+              Join the Community
+            </h2>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Create an account to start your reading journey. Upload books,
+              save favorites, and track your progress.
+            </p>
+          </div>
+
+          <!-- Decorative Circles -->
+          <div
+            class="absolute -bottom-10 -left-10 w-40 h-40 bg-accent rounded-full opacity-20 blur-2xl"
+          ></div>
+          <div
+            class="absolute top-20 right-10 w-20 h-20 bg-secondary rounded-full opacity-20 blur-2xl"
+          ></div>
+        </div>
+
+        <!-- RIGHT SIDE: Registration Form -->
+        <div
+          class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative"
+        >
+          <!-- Return Button -->
+          <a
+            href="../index.html"
+            class="absolute top-6 right-6 text-gray-400 hover:text-primary dark:hover:text-white transition-colors"
+            title="Back to Home"
+          >
+            <i class="ph-bold ph-x text-2xl"></i>
+          </a>
+
+          <!-- Header -->
+          <div class="text-center md:text-left mb-6">
+            <h1
+              class="text-3xl font-extrabold text-primary dark:text-white mb-2"
+            >
+              Create Account
+            </h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              It's free and easy to get started.
+            </p>
+          </div>
+
+          <!-- FORM -->
+          <form id="signup-form" class="space-y-4">
+            <!-- Full Name -->
+            <div class="space-y-1">
+              <label
+                class="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide"
+                >Full Name</label
+              >
+              <div class="relative group">
+                <i
+                  class="ph-bold ph-identification-card absolute left-3 top-3 text-gray-400 group-focus-within:text-accent transition-colors text-lg"
+                ></i>
+                <input
+                  id="full-name"
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                  class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-900 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                />
+              </div>
+            </div>
+
+            <!-- Username -->
+            <div class="space-y-1">
+              <label
+                class="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide"
+                >Username</label
+              >
+              <div class="relative group">
+                <i
+                  class="ph-bold ph-user absolute left-3 top-3 text-gray-400 group-focus-within:text-accent transition-colors text-lg"
+                ></i>
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="johndoe123"
+                  required
+                  class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-900 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="space-y-1">
+              <label
+                class="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide"
+                >Email Address</label
+              >
+              <div class="relative group">
+                <i
+                  class="ph-bold ph-envelope absolute left-3 top-3 text-gray-400 group-focus-within:text-accent transition-colors text-lg"
+                ></i>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="john@example.com"
+                  required
+                  class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-900 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                />
+              </div>
+            </div>
+
+            <!-- Password Group -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1">
+                <label
+                  class="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide"
+                  >Password</label
+                >
+                <div class="relative group">
+                  <i
+                    class="ph-bold ph-lock-key absolute left-3 top-3 text-gray-400 group-focus-within:text-accent transition-colors text-lg"
+                  ></i>
+                  <input
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    required
+                    class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-900 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                  />
+                </div>
+              </div>
+              <div class="space-y-1">
+                <label
+                  class="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide"
+                  >Confirm</label
+                >
+                <div class="relative group">
+                  <i
+                    class="ph-bold ph-check-circle absolute left-3 top-3 text-gray-400 group-focus-within:text-accent transition-colors text-lg"
+                  ></i>
+                  <input
+                    id="confirm-password"
+                    type="password"
+                    placeholder="••••••••"
+                    required
+                    class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-900 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Terms Checkbox -->
+            <div class="flex items-center gap-2 pt-2">
+              <input
+                type="checkbox"
+                required
+                class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent cursor-pointer"
+              />
+              <span class="text-xs text-gray-500 dark:text-gray-400">
+                I agree to the
+                <a
+                  href="#"
+                  class="text-primary dark:text-white underline hover:text-accent"
+                  >Terms of Service</a
+                >
+                and
+                <a
+                  href="#"
+                  class="text-primary dark:text-white underline hover:text-accent"
+                  >Privacy Policy</a
+                >.
+              </span>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 mt-4"
+            >
+              <span>Create Account</span>
+              <i class="ph-bold ph-user-plus"></i>
+            </button>
+          </form>
+
+          <!-- Footer -->
+          <p class="text-center text-sm text-gray-500 mt-6">
+            Already have an account?
+            <a
+              href="./signin.html"
+              class="font-bold text-accent hover:text-yellow-500 transition-colors"
+              >Sign in</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth Logic Script -->
+    <script type="module" src="../js/auth.js"></script>
+  </body>
+</html>
