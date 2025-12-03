@@ -6,6 +6,9 @@
     <title>View History | LIBRESHELF</title>
     <link href="../src/output.css" rel="stylesheet" />
 
+    <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Icons links -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link
@@ -103,6 +106,8 @@
 
           <!-- History Item 1 -->
           <div
+          data-aos="zoom-in"
+            data-aos="zoom-in"
             class="history-item bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 mb-4 flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6 border border-gray-100 dark:bg-primary"
           >
             <!-- Book Details (Image, Title, Info) -->
@@ -162,6 +167,7 @@
           </div>
 
      <div
+            data-aos="zoom-in"
             class="history-item bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 mb-4 flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6 border border-gray-100 dark:bg-primary"
           >
             <!-- Book Details (Image, Title, Info) -->
@@ -222,6 +228,7 @@
 
           <!-- History Item 2 (Duplicate for layout replication) -->
                <div
+            data-aos="zoom-in"
             class="history-item bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 mb-4 flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6 border border-gray-100 dark:bg-primary"
           >
             <!-- Book Details (Image, Title, Info) -->
@@ -289,6 +296,7 @@
 
           <!-- History Item 3 -->
               <div
+            data-aos="zoom-in"
             class="history-item bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 mb-4 flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6 border border-gray-100 dark:bg-primary"
           >
             <!-- Book Details (Image, Title, Info) -->
@@ -349,6 +357,7 @@
 
           <!--  -->
               <div
+            data-aos="zoom-in"
             class="history-item bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 mb-4 flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6 border border-gray-100 dark:bg-primary"
           >
             <!-- Book Details (Image, Title, Info) -->
@@ -408,6 +417,7 @@
           </div>
           <!--  -->
               <div
+            data-aos="zoom-in"
             class="history-item bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 mb-4 flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0 md:space-x-6 border border-gray-100 dark:bg-primary"
           >
             <!-- Book Details (Image, Title, Info) -->
@@ -479,5 +489,13 @@
       // Initialize Footer
       renderFooter("footer-container");
     </script>
+    <!-- AOS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+            <script>
+              AOS.init({
+                duration: 1000, // ១វិនាទីក្នុងការផ្លាស់ប្តូរ
+                once: true, // បង្ហាញតែម្តងពេលscrollមកដល់
+              });
+            </script>
   </body>
 </html>
