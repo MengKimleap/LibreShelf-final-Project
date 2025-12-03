@@ -214,6 +214,24 @@ export const Books = {
   async delete(bookId) {
     return protectedRequest(`/books/${bookId}`, "DELETE");
   },
+
+  // Bookmarks
+  async getBookmarks() {
+    return protectedRequest("/books/bookmark/me", "GET");
+  },
+  async addBookmark(bookId) {
+    return protectedRequest(`/books/bookmark?book_id=${bookId}`, "POST");
+  },
+  async removeBookmark(bookId) {
+    return protectedRequest(`/books/bookmark/${bookId}`, "DELETE");
+  },
+
+  async report(bookId, reason) {
+    return protectedRequest("/books/report/", "POST", {
+      book_id: bookId,
+      reason: reason,
+    });
+  },
 };
 
 // --- API CATEGORY: CATEGORIES (Admin) ---
@@ -237,24 +255,5 @@ export const Categories = {
   // Delete a category (Admin only)
   async delete(id) {
     return protectedRequest(`/categories/${id}`, "DELETE");
-  },
-
-  // Bookmarks
-  async getBookmarks() {
-    return protectedRequest("/books/bookmark/me/", "GET");
-  },
-  async addBookmark(bookId) {
-    return protectedRequest("/books/bookmark/", "POST", { book_id: bookId });
-  }, // Check logic if body needed
-  async removeBookmark(bookId) {
-    return protectedRequest(`/books/bookmark/${bookId}/`, "DELETE");
-  },
-
-  // Reports
-  async report(bookId, reason) {
-    return protectedRequest("/books/report/", "POST", {
-      book_id: bookId,
-      reason: reason,
-    });
   },
 };
