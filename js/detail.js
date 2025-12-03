@@ -85,9 +85,6 @@ function renderBookDetails(book) {
     els.downloadBtn.href = book.file_url;
     els.fallbackDownload.href = book.file_url;
 
-    // Set PDF Viewer
-    // Note: Some browsers block cross-origin PDF viewing in iframes.
-    // If it fails, we show fallback.
     els.pdfViewer.src = book.file_url;
 
     // Simple check: If file_url is not a PDF, hide viewer
@@ -124,8 +121,6 @@ async function checkFavoriteStatus() {
     const bookmarks = await Books.getBookmarks();
 
     // Check if current book is in the list
-    // Note: bookmarks might be array of objects, so we check book.id
-    // We compare with loose equality (==) because URL params are strings
     isFavorite = bookmarks.some((bookmark) => bookmark.book_id == bookId);
 
     updateFavoriteUI(isFavorite);

@@ -5,13 +5,6 @@ function renderNavbar(containerId, activePage = "") {
   // Get the current path
   const path = window.location.pathname;
   let pathPrefix = ".";
-
-  // Logic:
-  // 1. We assume your project structure puts all sub-pages inside a folder named "pages".
-  // 2. We find where "/pages/" starts in the URL.
-  // 3. We count how many slashes appear AFTER "/pages/".
-  // 4. Each slash represents a deeper folder level requiring a "../" to go back up.
-
   if (path.includes("/pages/")) {
     const parts = path.split(/\/pages\//);
     const subPath = parts[1];

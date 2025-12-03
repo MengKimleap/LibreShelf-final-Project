@@ -1,15 +1,7 @@
-/**
- * Initializes a seamless horizontal marquee.
- * Exported to be called after API data loads.
- */
 export function initSeamlessMarquee(trackId) {
   const track = document.getElementById(trackId);
   if (!track) return;
-
-  // ... (Rest of your existing logic: measure width, clone children, create style) ...
-  // Copy your existing logic here, just wrap it in 'export function'
-
-  // Ensure we don't double-init
+  
   if (track.classList.contains("marquee-initialized")) return;
   track.classList.add("marquee-initialized");
 

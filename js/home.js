@@ -1,22 +1,19 @@
 import { Books } from "./api.js";
-import { initSeamlessMarquee } from "./marquee.js"; // Import your marquee logic
+import { initSeamlessMarquee } from "./marquee.js";
 
 // DOM Elements
 const els = {
   newReleaseTrack: document.getElementById("new-release-track"),
-  trendingGrid: document.getElementById("trending-grid"), // Renamed from popular for clarity? No, stick to your layout
+  trendingGrid: document.getElementById("trending-grid"),
   popularGrid: document.getElementById("popular-books-grid"),
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // 1. Fetch "New Releases" (Page 1 - Latest 10)
     const newReleaseData = await Books.getAll({ page: 1, limit: 10 });
     const newBooks = newReleaseData.books || newReleaseData.data || [];
     renderNewReleases(newBooks);
 
-    // 2. Fetch "Popular/Trending" (Page 2 - Next 8)
-    // We simulate "Popular" by just getting a different set of books
     const popularData = await Books.getAll({ page: 2, limit: 8 });
     const popularBooks = popularData.books || popularData.data || [];
     renderPopularBooks(popularBooks);
@@ -25,11 +22,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// --- RENDERERS ---
-
-/**
- * Renders the Infinite Marquee (New Releases)
- */
 function renderNewReleases(books) {
   if (!els.newReleaseTrack) return;
 
@@ -65,8 +57,6 @@ function renderNewReleases(books) {
 
   els.newReleaseTrack.innerHTML = cardsHTML;
 
-  // Start Animation Logic (from marquee.js)
-  // We delay slightly to ensure DOM is ready
   setTimeout(() => {
     if (window.initSeamlessMarquee) {
       window.initSeamlessMarquee("new-release-track");
@@ -74,9 +64,6 @@ function renderNewReleases(books) {
   }, 100);
 }
 
-/**
- * Renders the Grid (Popular Books)
- */
 function renderPopularBooks(books) {
   if (!els.popularGrid) return;
   els.popularGrid.innerHTML = "";
@@ -147,20 +134,13 @@ function renderPopularBooks(books) {
     .join("");
 }
 
-// --- FAVORITE LOGIC ---
 
-// 1. Helper to sync UI on load
 async function highlightUserFavorites() {
   const token = localStorage.getItem("access_token");
   if (!token) return;
 
   try {
     const bookmarks = await Books.getBookmarks();
-    // Get all heart icons on the page
-    // Note: This requires your heart buttons to have a specific ID or class logic.
-    // A better way is to check the ID passed to the onclick handler.
-
-    // We will store IDs in a Set for fast lookup
     const favIds = new Set(bookmarks.map((b) => b.book_id));
 
     // Find all buttons that call toggleHomeFavorite
@@ -187,12 +167,8 @@ async function highlightUserFavorites() {
   }
 }
 
-// 2. The Toggle Function (Global)
+//  The Toggle Function (Global)
 window.toggleHomeFavorite = async (id, btnElement) => {
-  // Note: To change the icon instantly, we need the button element.
-  // Update your HTML generation in renderNewReleases/renderPopularBooks
-  // to pass 'this': onclick="toggleHomeFavorite(${book.id}, this)"
-
   // Fallback if 'this' wasn't passed (try to find event target)
   const btn = btnElement || event.currentTarget;
   const icon = btn.querySelector("i");

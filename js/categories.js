@@ -21,7 +21,7 @@ const sentinel = document.getElementById("scroll-sentinel");
 const bookCount = document.getElementById("book-count");
 const clearFilterBtn = document.getElementById("clear-filters");
 
-// --- 1. INITIALIZE ---
+// Init
 async function init() {
   await loadCategories();
   const params = new URLSearchParams(window.location.search);
@@ -44,7 +44,7 @@ async function init() {
   setupInfiniteScroll();
 }
 
-// --- 2. LOAD CATEGORIES (Sidebar) ---
+// Load Categories
 async function loadCategories() {
   try {
     const categories = await Utils.getCategories();
@@ -73,7 +73,7 @@ async function loadCategories() {
   }
 }
 
-// --- 3. LOAD BOOKS (Main Logic) ---
+//  LOAD BOOKS (Main Logic)
 async function loadBooks(reset = false) {
   if (state.isLoading) return;
   if (reset) {
@@ -128,7 +128,7 @@ async function loadBooks(reset = false) {
   }
 }
 
-// --- 4. HTML CARD GENERATOR ---
+//  HTML CARD GENERATOR
 function createCardHTML(book) {
   const title = book.title || "Untitled";
   const desc = book.description || "No description.";
@@ -181,7 +181,7 @@ function createCardHTML(book) {
     `;
 }
 
-// --- 5. EVENT LISTENERS ---
+//  EVENT LISTENERS
 function setupEvents() {
   // Search Debounce
   let timeout;
@@ -217,7 +217,7 @@ function setupEvents() {
   });
 }
 
-// --- 6. INFINITE SCROLL ---
+// INFINITE SCROLL
 function setupInfiniteScroll() {
   const observer = new IntersectionObserver(
     (entries) => {

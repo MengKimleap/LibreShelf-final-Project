@@ -1,8 +1,3 @@
-/**
- * THEME MANAGER
- * Handles Dark/Light mode toggling and persistence.
- */
-
 const theme = {
   // 1. Initialize Theme on Load
   init() {

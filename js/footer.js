@@ -1,8 +1,3 @@
-/**
- * Renders the Footer into a specific container.
- * Matches the specific 3-column layout with internal alignments.
- * @param {string} containerId - The ID of the div where the footer should be injected.
- */
 function renderFooter(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
